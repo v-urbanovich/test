@@ -37,3 +37,18 @@ type DefaultDropdownOption<T = number> = {
   value: T;
   display_name: string | Callback;
 };
+
+
+interface IDialog<D> {
+  dialog: string;
+  dialogData?: D;
+  readonly?: boolean;
+}
+
+interface IEtoolsDialogResponse {
+  confirmed: boolean;
+}
+
+interface IDialogResponse<R> extends IEtoolsDialogResponse {
+  response?: R;
+}
