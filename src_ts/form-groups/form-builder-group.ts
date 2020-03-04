@@ -241,6 +241,7 @@ export class FormBuilderGroup extends LitElement implements IFormBuilderAbstract
     this.value[name] = event.detail.value;
     event.stopPropagation();
     fireEvent(this, 'value-changed', {value: this.value});
+    this.performUpdate();
   }
 
   errorChanged(event: CustomEvent, name: string): void {
